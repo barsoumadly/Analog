@@ -6,7 +6,7 @@ const minutesEL = document.getElementById('minutes');
 const secondsEL = document.getElementById('seconds');
 const stateEL = document.getElementById('ampm');
 
-// Selecting clock Analog
+// Selecting clock
 const hourArrow = document.getElementById('hr');
 const minuteArrow = document.getElementById('mn');
 const secondArrow = document.getElementById('sc');
@@ -25,7 +25,9 @@ const setDate = function () {
   let time = getDate();
   setInterval(() => {
     // Clock arrows
-    hourArrow.style.transform = `rotateZ(${time[0] * 30 + time[1] / 12}deg)`;
+    hourArrow.style.transform = `rotateZ(${
+      time[0] * 30 + (time[1] * 6) / 12
+    }deg)`;
     minuteArrow.style.transform = `rotateZ(${time[1] * 6}deg)`;
     secondArrow.style.transform = `rotateZ(${time[2] * 6}deg)`;
 
